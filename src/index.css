@@ -1,13 +1,11 @@
 @import url(./shared/globalStyles.css);
 
 :root {
-  --primary-bg-color: #030108;
-  /* --primary-bg-color-light: #29184d; */
-  --secondary-bg-color: #170b3b;
-  --secondary-bg-color-light: #301d69;
-  --tertiary-bg-color: #341948;
-  --primary-color: #00B7C4;
-  --secondary-color: #FF6F61;
+  --primary-bg-color: #1b2838;
+  --secondary-bg-color: #283a58; 
+  --tertiary-bg-color: #4f6a8a;
+  --primary-color: #c4d0e3;
+  --secondary-color: #E99D72;
   --color-white: #e9feff;
 }
 

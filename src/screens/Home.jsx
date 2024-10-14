@@ -8,7 +8,7 @@ import Feed from "./Feed";
 import Sidebar from "../components/sidebar/Sidebar"
 import '../styles/home.css'
 import Login from "./Login"
-import { setClientToken } from "../../spotify"
+import { setClientToken } from "../spotify"
 
 export default function Home() {
     const [token, setToken] = useState("")

@@ -4,7 +4,7 @@ import SidebarButton from "./SidebarButton"
 import { MdFavorite, MdSpaceDashboard } from "react-icons/md"
 import { FaGripfire, FaPlay, FaSignOutAlt } from "react-icons/fa"
 import { IoLibrary } from "react-icons/io5"
-import apiClient from "../../../spotify"
+import apiClient from "../../spotify"
 
 export default function Sidebar() {
     const [image, setImage] = useState("https://picsum.photos/50/50")
