@@ -37,7 +37,7 @@ export default function Library() {
                 onClick={() => playPlaylist(playlist.id)}
               >
                 <img
-                  src={playlist.images[0].url}
+                  src={playlist?.images?.[0]?.url}
                   className="playlist-image"
                   alt="Playlist-Art"
                 />
