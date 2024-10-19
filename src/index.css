@@ -7,6 +7,14 @@
   --primary-color: #c4d0e3;
   --secondary-color: #E99D72;
   --color-white: #e9feff;
+
+  --font-size-h1: 4.5rem; /* 72px */
+  --font-size-h2: 3.75rem; /* 60px */
+  --font-size-h3: 3rem; /* 48px */
+  --font-size-h4: 2.25rem; /* 36px */
+  --font-size-h5: 1.5rem; /* 24px */
+  --font-size-h6: 1.125rem; /* 18px */
+  --font-size-small: 0.8rem;
 }
 
 body {
@@ -14,5 +22,38 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   box-sizing: border-box;
   background-color: black;
+  color: var(--color-white);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+  
+}
+
+h5 {
+  font-size: var(--font-size-h5);
+}
+
+h6 {
+  font-size: var(--font-size-h6);
+  font-weight: 300;
+  margin: 0;
+}
+
+.tag {
+  font-size: var(--font-size-small);
+  font-family: 'Lato', 'Roboto', 'Helvetica Neue', sans-serif;
 }
 

@@ -1,0 +1,36 @@
+.player-container {
+    margin: 20px;
+    border-radius: 30px;
+}
+
+.player-header {
+    padding: 20px;
+    background-color: #283a585c;
+    display: flex;
+    gap: 20px;
+    align-items: end;
+    border-radius: 30px;
+}
+
+.playlist-img {
+    flex-shrink: 0;     /* Prevents the image from shrinking when the container size changes */
+    width: 200px;       /* Set a fixed width for the image */
+    height: 200px;      /* Set a fixed height for the image */
+    overflow: hidden;   /* Ensure that the image doesn't overflow */
+    border-radius: 20px; /* Optional: rounding for the image container */
+}
+
+.playlist-img img {
+    width: 100%;        /* Make the image take full width of the container */
+    height: 100%;       /* Ensure it takes the full height of the container */
+    object-fit: cover;  /* Crop the image to maintain aspect ratio and cover the container */
+    border-radius: 20px; /* Ensure the image itself has rounded corners */
+}
+
+.playlist-details {
+    margin-left: 20px;
+}
+
+.playlist-details h1 {
+    margin-top: 0;
+}
