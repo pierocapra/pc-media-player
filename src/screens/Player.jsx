@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 
-// Files
-import apiClient from "../spotify";
+import apiBase from "../api";
 
 // Styles
 import '../styles/player.css'
@@ -12,12 +11,12 @@ export default function Player() {
   const { id } = location.state || {}; 
   const [playlistData, setPlaylistData] = useState({})
 
-  useEffect(() => {
-      apiClient.get(`/playlists/${id}`).then(function(response) {
-        console.log(response)
-        setPlaylistData(response.data)
+  useEffect(()=>{
+    apiBase.get(`/playlist?id=${id}`).then(function(response) {
+      console.log(response)
+      setPlaylistData(response.data)
     })
-  }, [])
+},[])
   
   return (
     <div className="screen-container">

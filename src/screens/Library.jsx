@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-// Files
-import apiClient from "../spotify"
+import apiBase from "../api";
 
 // Icons
 import { IconContext } from "react-icons";
@@ -15,9 +14,9 @@ export default function Library() {
     const [playlists, setPlaylists] = useState(null)
 
     useEffect(()=>{
-        apiClient.get('me/playlists').then(function(response) {
-            setPlaylists(response.data.items)
-            console.log(playlists)
+      apiBase.get('/playlists').then(function(response) {
+          console.log(response)
+          setPlaylists(response.data.playlists.items)
         })
     },[])
 
