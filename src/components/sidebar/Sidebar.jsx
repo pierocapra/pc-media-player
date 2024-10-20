@@ -8,7 +8,7 @@ import { IoLibrary } from "react-icons/io5"
 export default function Sidebar() {
   return (
     <div className="sidebar-container">
-        <img src="../../public/PC-logo.png" alt="profile-image" className="profile-image" />
+        <img src="/PC-logo.png" alt="profile-image" className="profile-image" />
         <div>
             <SidebarButton title="Feed" to="/feed" icon={<MdSpaceDashboard />}/>
             <SidebarButton title="Trending" to="/trending" icon={<FaGripfire />}/>
