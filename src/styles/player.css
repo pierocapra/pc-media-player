@@ -65,7 +65,7 @@
 }
   
 .track:hover {
-    background-color: #f0f0f02a;
+    background-color: #1b2838af;
 }
   
 .play-icon {
@@ -88,3 +88,34 @@
 .track p:nth-child(2) {
     font-weight: bold;
 }
+
+/* Custom Scrollbar for WebKit Browsers (Chrome, Safari) */
+.playlist-content::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+  }
+  
+  .playlist-content::-webkit-scrollbar-track {
+    background: #1b2838; /* Track color */
+    border-radius: 10px; /* Rounded corners for the track */
+  }
+  
+  .playlist-content::-webkit-scrollbar-thumb {
+    background: #4b4b4b; /* Thumb color */
+    border-radius: 10px; /* Rounded corners for the thumb */
+  }
+  
+  .playlist-content::-webkit-scrollbar-thumb:hover {
+    background: #787878; /* Thumb color on hover */
+  }
+  
+  /* Custom Scrollbar for Firefox */
+  .playlist-content {
+    scrollbar-width: thin; /* Use a thin scrollbar */
+    scrollbar-color: #4b4b4b #1b2838; /* Thumb color and track color */
+  }
+  
+  /* Custom Scrollbar for Edge */
+  .playlist-content {
+    -ms-overflow-style: scrollbar; /* IE and Edge */
+  }
+  

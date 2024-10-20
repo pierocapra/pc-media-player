@@ -48,7 +48,6 @@ export default function Player() {
           {playlistData?.tracks?.items?.map((track) => {
             return (
               <li key={track.track.id} className="track" onClick={() => handleTrackClick(track.track.id)}>
-                {/* Play icon */}
                 <span className="play-icon">▶</span>
                 <p>{track.track.name}</p>
                 <img src={track.track?.album?.images?.[0].url} alt={track.track.name} />
