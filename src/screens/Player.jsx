@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 
+import { formatDuration } from "../helpers/helpers";
 import apiBase from "../api";
 
 // Styles
@@ -34,11 +35,32 @@ export default function Player() {
           </div>
         </div>
         <div className="player-content">
-          <ul>
-            {playlistData?.tracks?.items?.map((track)=>{
-              return <p key={track.track.id} >{track.track.name}</p>
-            })}
-          </ul>
+        <ul className="playlist">
+          <li className="playlist-header">
+            <span></span> {/* Empty space for the play icon header */}
+            <span>Track</span>
+            <span>Cover</span>
+            <span>Album</span>
+            <span>Artist</span>
+            <span>Duration</span>
+          </li>
+          <div className="playlist-content">
+          {playlistData?.tracks?.items?.map((track) => {
+            return (
+              <li key={track.track.id} className="track" onClick={() => handleTrackClick(track.track.id)}>
+                {/* Play icon */}
+                <span className="play-icon">▶</span>
+                <p>{track.track.name}</p>
+                <img src={track.track?.album?.images?.[0].url} alt={track.track.name} />
+                <p>{track.track.album.name}</p>
+                <p>{track.track.artists[0].name}</p>
+                <p>{formatDuration(track.track.duration_ms)}</p>
+              </li>
+            );
+          })}
+          </div>
+        </ul>
+
         </div>
       </div>
     </div>
