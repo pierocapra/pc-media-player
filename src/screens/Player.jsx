@@ -12,6 +12,29 @@ export default function Player() {
   const { id } = location.state || {}; 
   const [playlistData, setPlaylistData] = useState({})
 
+  const [currentTrackId, setCurrentTrackId] = useState(null); // Track the current track playing by ID
+  const [currentTrack, setCurrentTrack] = useState(null); // Track the current track playing
+  const [audio, setAudio] = useState(null); // Audio instance
+
+  // Handle track click to play/pause the track
+  const handleTrackClick = (track, trackId, previewUrl) => {
+    // If the same track is clicked, toggle play/pause
+    if (currentTrackId === trackId && audio) {
+      audio.paused ? audio.play() : audio.pause();
+    } else {
+      // If a different track is clicked, pause the existing track
+      if (audio) {
+        audio.pause();
+      }
+      // Create a new audio instance for the new track
+      const newAudio = new Audio(previewUrl);
+      newAudio.play();
+      setAudio(newAudio);
+      setCurrentTrackId(trackId);
+      setCurrentTrack(track)
+    }
+  };
+
   useEffect(()=>{
     apiBase.get(`/playlist?id=${id}`).then(function(response) {
       console.log(response)
@@ -35,31 +58,41 @@ export default function Player() {
           </div>
         </div>
         <div className="player-content">
-        <ul className="playlist">
-          <li className="playlist-header">
-            <span></span> {/* Empty space for the play icon header */}
-            <span>Track</span>
-            <span>Cover</span>
-            <span>Album</span>
-            <span>Artist</span>
-            <span>Duration</span>
-          </li>
-          <div className="playlist-content">
-          {playlistData?.tracks?.items?.map((track) => {
-            return (
-              <li key={track.track.id} className="track" onClick={() => handleTrackClick(track.track.id)}>
-                <span className="play-icon">▶</span>
-                <p>{track.track.name}</p>
-                <img src={track.track?.album?.images?.[0].url} alt={track.track.name} />
-                <p>{track.track.album.name}</p>
-                <p>{track.track.artists[0].name}</p>
-                <p>{formatDuration(track.track.duration_ms)}</p>
+          <div className="playlist-section">
+            <ul className="playlist">
+              <li className="playlist-header">
+                <span></span> {/* Empty space for the play icon header */}
+                <span>Track</span>
+                <span>Cover</span>
+                <span>Album</span>
+                <span>Artist</span>
+                <span>Duration</span>
               </li>
-            );
-          })}
+              <div className="playlist-content">
+              {playlistData?.tracks?.items?.map((track) => {
+                return (
+                  <li key={track.track.id} className="track" onClick={() => handleTrackClick(track.track, track.track.id, track.track.preview_url)}>
+                    <span className="play-icon">▶</span>
+                    <p>{track.track.name}</p>
+                    <img src={track.track?.album?.images?.[0].url} alt={track.track.name} />
+                    <p>{track.track.album.name}</p>
+                    <p>{track.track.artists[0].name}</p>
+                    <p>{formatDuration(track.track.duration_ms)}</p>
+                  </li>
+                );
+              })}
+              </div>
+            </ul>
           </div>
-        </ul>
-
+          <div className="song-details">
+            <img src={currentTrack?.album?.images[0]?.url} alt="Album cover" className="album-cover" />
+            <div className="song-info">
+              <h2>{currentTrack?.name}</h2>
+              <p>by {currentTrack?.artists[0].name}</p>
+              <p>Album: {currentTrack?.album.name}</p>
+              <p>Released on: {currentTrack?.album.release_date}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
