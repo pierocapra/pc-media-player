@@ -1,7 +1,8 @@
 .player-container {
-    margin: 20px;
     border-radius: 30px;
-    height: 100vh;
+    height: calc(100vh - 80px);
+    display: grid;
+    grid-template-rows: 300px 1fr;
 }
 
 .player-header {
@@ -11,6 +12,14 @@
     gap: 20px;
     align-items: end;
     border-radius: 30px;
+}
+
+.player-content {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  gap: 20px;
+  padding: 20px;
+  flex: 1; /* Ensures it fills the remaining vertical space */
 }
 
 .playlist-img {
@@ -38,25 +47,17 @@
 
 /* Tracks */
 
-
-.player-content {
-  display: grid;
-  grid-template-columns: 80% 20%;
-  gap: 20px;
-  padding: 20px;
-  flex: 1; /* Ensures it fills the remaining vertical space */
+.playlist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 100%;
 }
 
 .playlist-content {
-    max-height: calc(100vh - 320px); 
+    max-height: 420px; 
     overflow-y: auto; /* Enable scrolling */
     padding-right: 10px; /* Space for scrollbar */
-  }
-
-.playlist {
-    list-style: none;
-    padding: 0;
-    margin: 0;
   }
 
 .playlist-header, .track {

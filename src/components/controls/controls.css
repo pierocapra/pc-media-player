@@ -1,0 +1,43 @@
+.control-bar {
+    position: fixed;
+    bottom: 0;
+    width: calc(100vw - 100px);
+    height: 80px;
+    border-top: 1px solid #ccc;
+}
+
+.control-container {
+    height: 100%;
+    background-color: #283a585c;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    color: #fff;
+}
+  
+.track-info h4 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.track-info p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+  

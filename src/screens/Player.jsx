@@ -4,6 +4,8 @@ import { useLocation } from 'react-router-dom';
 import { formatDuration } from "../helpers/helpers";
 import apiBase from "../api";
 
+import Controls from "../components/controls/Controls";
+
 // Styles
 import '../styles/player.css'
 
@@ -95,6 +97,7 @@ export default function Player() {
           </div>
         </div>
       </div>
+      <Controls></Controls>
     </div>
   )
 }
