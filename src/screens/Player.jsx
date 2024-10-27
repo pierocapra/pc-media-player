@@ -97,7 +97,6 @@ export default function Player() {
           </div>
         </div>
       </div>
-      <Controls></Controls>
     </div>
   )
 }

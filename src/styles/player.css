@@ -1,6 +1,5 @@
 .player-container {
     border-radius: 30px;
-    height: calc(100vh - 80px);
     display: grid;
     grid-template-rows: 300px 1fr;
 }

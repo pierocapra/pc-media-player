@@ -5,11 +5,12 @@ import Player from "./Player"
 import Favorites from "./Favorites"
 import Library from "./Library"
 import Feed from "./Feed";
+
+import Controls from "../components/controls/Controls"
 import Sidebar from "../components/sidebar/Sidebar"
 import '../styles/home.css'
 
 export default function Home() {
-
     return  (
             <Router>
                 <div className="main-body">
@@ -21,6 +22,7 @@ export default function Home() {
                         <Route path="/player" element={<Player />} />
                         <Route path="/favorites" element={<Favorites />} />
                     </Routes> 
+                    <Controls></Controls>
                 </div>
             </Router>
         )

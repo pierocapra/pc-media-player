@@ -1,7 +1,6 @@
 .library-body {
-    width: 94%;
-    height: 90%;
-    padding: 3%;
+    height: calc(100vh - 80px - 40px);
+    padding: 20px;
     display: flex;
     flex-wrap: wrap;
     overflow-y: auto;
