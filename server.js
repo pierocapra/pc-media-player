@@ -60,7 +60,6 @@ app.get('/api/public-data/playlists/', async (req, res) => {
 
 // API endpoint to fetch a single playlist data
 app.get('/api/public-data/playlist/', async (req, res) => {
-  const { query } = req.query; // For example, this could be a search query
   const { id } = req.query;
 
   try {

@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 // Styles
 import '../styles/library.css'
 
-export default function Library() {
+export default function Library({setPlaylist}) {
     const [playlists, setPlaylists] = useState(null)
 
     useEffect(()=>{
@@ -23,6 +23,10 @@ export default function Library() {
     const navigate = useNavigate();
 
     const playPlaylist = (id) => {
+        apiBase.get(`/playlist?id=${id}`).then(function(response) {
+              console.log(response)
+              setPlaylist(response.data)
+        })
         navigate("/player", { state: { id: id } });
     };
 
